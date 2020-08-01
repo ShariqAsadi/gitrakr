@@ -1,5 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaSearch } from 'react-icons/fa';
+
+const Container = styled.div`
+  position: relative;
+  span {
+    position: absolute;
+    top: 13px;
+    right: 9px;
+    .faSearch {
+      color: rgb(46 144 239 / 100%);
+      font-size: 1.8rem;
+    }
+  }
+`;
 
 const StyledInput = styled.input`
   outline: none;
@@ -9,7 +23,7 @@ const StyledInput = styled.input`
   border: none;
   background: rgb(66 96 125 / 88%);
   color: rgb(46 144 239 / 100%);
-  padding: 10px;
+  padding: 10px 50px;
   text-align: center;
 
   &:focus {
@@ -25,7 +39,16 @@ const StyledInput = styled.input`
 `;
 
 const Input = (props) => {
-  return <StyledInput type='text' {...props} />;
+  return (
+    <>
+      <Container>
+        <StyledInput type='text' {...props} />
+        <span>
+          <FaSearch className='faSearch' />
+        </span>
+      </Container>
+    </>
+  );
 };
 
 export default Input;

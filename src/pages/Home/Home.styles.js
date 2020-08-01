@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-  /* padding: 5px; */
   width: 100vw;
   height: 100vh;
   background-color: rgb(26, 30, 34);
@@ -23,32 +22,16 @@ export const Grid = styled.div`
     transition: all 0.3s ease-in-out;
     h1 {
       font-size: 2.5rem;
+      svg {
+        margin-right: 0.2em;
+        font-size: 1.7rem;
+      }
     }
-    &:first-child {
-      /* border-right: 1px solid rgb(66 96 125); */
-    }
-    &:last-child {
-      /* border-left: 1px solid rgb(66 96 125); */
-    }
-    /* &:hover {
-      color: blue; /*  TODO: Look for a good color */
-    /* box-shadow: 0 0 10px 5px blue; */
-    /*} */
   }
 
   @media (max-width: 768px) {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
-    div {
-      &:first-child {
-        border-right: none;
-        /* border-bottom: 1px solid rgb(66 96 125); */
-      }
-      &:last-child {
-        border-left: none;
-        /* border-top: 1px solid rgb(66 96 125); */
-      }
-    }
   }
 `;
 
