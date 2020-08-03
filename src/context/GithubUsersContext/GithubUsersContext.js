@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useReducer } from 'react';
+import { userData } from '../../api/mockUserData';
 
 const GithubUsersContext = React.createContext();
 
-const GithubUsersProvider = ({ children }) => (
-  <GithubUsersContext.Provider value={'A user'}>
-    {children}
-  </GithubUsersContext.Provider>
-);
+const initialState = {
+  user: userData,
+};
+
+const userReducer = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_USER':
+      return { ...state, user: action.payload };
+  }
+};
+
+const GithubUsersProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(userReducer, initialState);
+
+  return (
+    <GithubUsersContext.Provider value={{ state, dispatch }}>
+      {children}
+    </GithubUsersContext.Provider>
+  );
+};
 
 export { GithubUsersContext, GithubUsersProvider };

@@ -36,9 +36,11 @@ export const Grid = styled.div`
 `;
 
 export const Items = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 120px;
-  align-items: center;
-  justify-content: space-between;
+  form {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
