@@ -9,7 +9,7 @@ const Container = styled.div`
     top: 13px;
     right: 9px;
     .faSearch {
-      color: rgb(46 144 239 / 100%);
+      color: var(--clr-text-blue);
       font-size: 1.8rem;
     }
   }
@@ -21,8 +21,8 @@ const StyledInput = styled.input`
   font-size: 2rem;
   font-family: 'Inconsolata', monospace;
   border: none;
-  background: rgb(66 96 125 / 88%);
-  color: rgb(46 144 239 / 100%);
+  background: var(--clr-bg-blue);
+  color: var(--clr-text-blue);
   padding: 10px 50px;
   text-align: center;
 
@@ -34,7 +34,7 @@ const StyledInput = styled.input`
 
   &::placeholder {
     font-size: 1.8rem;
-    color: rgb(46 144 239 / 70%);
+    color: var(--clr-placeholder-blue);
   }
 `;
 

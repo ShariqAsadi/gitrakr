@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgb(26, 30, 34);
+  background-color: var(--clr-black);
 `;
 
 export const Grid = styled.div`
@@ -15,7 +15,7 @@ export const Grid = styled.div`
     height: 100%;
     width: 100%;
     display: flex;
-    color: rgb(246, 248, 250);
+    color: var(--clr-white-light);
     flex-direction: column;
     justify-content: center;
     align-items: center;
