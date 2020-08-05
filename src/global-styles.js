@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     --clr-text-blue: rgb(46,144,239);
     --clr-bg-blue: rgb(66 96 125 / 88%);
     --clr-placeholder-blue: rgb(46 144 239 / 70%);
+    --clr-yellow: #ffb515
   }
   body {
     min-height: 100vh;
