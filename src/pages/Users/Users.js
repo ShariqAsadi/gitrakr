@@ -33,6 +33,23 @@ const Users = () => {
               </div>
             ) : null}
           </div>
+          <div className='stats'>
+            <div>
+              <span>Followers</span> <span>{user.followers}</span>
+            </div>
+            <div>
+              <span>Following</span>
+              <span>{user.following}</span>
+            </div>
+            <div>
+              <span>Repos</span>
+              <span>{user.public_repos}</span>
+            </div>
+            <div>
+              <span>Gists</span>
+              <span>{user.public_gists}</span>
+            </div>
+          </div>
         </div>
       </section>
     </Container>

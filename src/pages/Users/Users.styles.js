@@ -47,4 +47,18 @@ export const Container = styled.main`
       cursor: pointer;
     }
   }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 2.5rem;
+    justify-items: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
