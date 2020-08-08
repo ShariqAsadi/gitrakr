@@ -28,25 +28,28 @@ const Users = () => {
               <div className='handle'>
                 <AiOutlineTwitter className='icon' />
                 <span>
-                  <a href={user.html_url}>{user.twitter_username}</a>
+                  <a href={`https://www.twitter.com/${user.twitter_username}`}>
+                    {user.twitter_username}
+                  </a>
                 </span>
               </div>
             ) : null}
           </div>
           <div className='stats'>
             <div>
-              <span>Followers</span> <span>{user.followers}</span>
+              <span className='stats-heading'>Followers</span>
+              <span>{user.followers}</span>
             </div>
             <div>
-              <span>Following</span>
+              <span className='stats-heading'>Following</span>
               <span>{user.following}</span>
             </div>
             <div>
-              <span>Repos</span>
+              <span className='stats-heading'>Repos</span>
               <span>{user.public_repos}</span>
             </div>
             <div>
-              <span>Gists</span>
+              <span className='stats-heading'>Gists</span>
               <span>{user.public_gists}</span>
             </div>
           </div>

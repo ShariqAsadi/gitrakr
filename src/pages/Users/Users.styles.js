@@ -59,6 +59,13 @@ export const Container = styled.main`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      border: 1px solid var(--clr-yellow-shade);
+      padding: 1rem;
+    }
+
+    .stats-heading {
+      color: var(--clr-yellow);
+      font-size: 1.7rem;
     }
   }
 `;
