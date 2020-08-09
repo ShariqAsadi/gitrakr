@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Container } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
+import Statistic from '../../components/Statistic/Statistic';
 const Users = () => {
   const {
     state: { user },
@@ -36,22 +37,10 @@ const Users = () => {
             ) : null}
           </div>
           <div className='stats'>
-            <div>
-              <span className='stats-heading'>Followers</span>
-              <span>{user.followers}</span>
-            </div>
-            <div>
-              <span className='stats-heading'>Following</span>
-              <span>{user.following}</span>
-            </div>
-            <div>
-              <span className='stats-heading'>Repos</span>
-              <span>{user.public_repos}</span>
-            </div>
-            <div>
-              <span className='stats-heading'>Gists</span>
-              <span>{user.public_gists}</span>
-            </div>
+            <Statistic heading='Followers' count={user.followers} />
+            <Statistic heading='Following' count={user.following} />
+            <Statistic heading='Repos' count={user.public_repos} />
+            <Statistic heading='Gists' count={user.public_gists} />
           </div>
         </div>
       </section>

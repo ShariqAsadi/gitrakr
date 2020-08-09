@@ -53,19 +53,5 @@ export const Container = styled.main`
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 2.5rem;
     justify-items: center;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--clr-yellow-shade);
-      padding: 1rem;
-    }
-
-    .stats-heading {
-      color: var(--clr-yellow);
-      font-size: 1.7rem;
-    }
   }
 `;
