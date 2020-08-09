@@ -7,9 +7,15 @@ export const Wrapper = styled.div`
   align-items: center;
   border: 1px solid var(--clr-yellow-shade);
   padding: 1rem;
+  min-width: 156px;
 
   span:first-child {
     color: var(--clr-yellow);
     font-size: 1.7rem;
+  }
+
+  span:last-child {
+    font-size: 0.95rem;
+    margin-top: 5px;
   }
 `;

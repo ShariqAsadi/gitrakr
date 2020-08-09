@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { Container } from './Users.styles';
+import { Container, Name, UserDetails } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import Statistic from '../../components/Statistic/Statistic';
+import SocialLink from '../../components/SocialLink/SocialLink';
 const Users = () => {
   const {
     state: { user },
@@ -13,29 +14,22 @@ const Users = () => {
       <section className='navbar'>
         <div>Navbar</div>
       </section>
-
       <section id='main'>
         <div className='user-info'>
           <img className='avatar' src={user.avatar_url} alt='avatar' />
-          <h1>{user.name}</h1>
-          <div className='user-details'>
-            <div className='handle'>
-              <AiFillGithub className='icon' />
-              <span>
-                <a href={user.html_url}>{user.login}</a>
-              </span>
-            </div>
-            {user.twitter_username ? (
-              <div className='handle'>
-                <AiOutlineTwitter className='icon' />
-                <span>
-                  <a href={`https://www.twitter.com/${user.twitter_username}`}>
-                    {user.twitter_username}
-                  </a>
-                </span>
-              </div>
-            ) : null}
-          </div>
+          <Name>{user.name}</Name>
+          <UserDetails>
+            <SocialLink
+              icon={<AiFillGithub className='icon' />}
+              href={user.html_url}
+              text={user.login}
+            />
+            <SocialLink
+              icon={<AiOutlineTwitter className='icon' />}
+              href={`https://www.twitter.com/${user.twitter_username}`}
+              text={user.twitter_username}
+            />
+          </UserDetails>
           <div className='stats'>
             <Statistic heading='Followers' count={user.followers} />
             <Statistic heading='Following' count={user.following} />

@@ -3,8 +3,8 @@ import { Wrapper } from './Statistic.styles';
 const Statistic = ({ heading, count }) => {
   return (
     <Wrapper>
-      <span>{heading}</span>
       <span>{count}</span>
+      <span>{heading}</span>
     </Wrapper>
   );
 };

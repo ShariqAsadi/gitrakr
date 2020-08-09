@@ -14,44 +14,39 @@ export const Container = styled.main`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 50px 0px;
   }
 
   .avatar {
     width: 150px;
+    height: 150px;
     border-radius: 100%;
     border: 0.5rem solid var(--clr-yellow);
   }
 
-  h1 {
-    font-size: 2rem;
-  }
-
-  .user-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-  }
-
-  .handle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    .icon {
-      vertical-align: middle;
-      font-size: 1.3rem;
-    }
-    a {
-      margin-left: 0.2em;
-      color: var(--clr-yellow);
-      text-decoration: none;
-      cursor: pointer;
-    }
+  .icon {
+    vertical-align: middle;
+    font-size: 1.3rem;
   }
 
   .stats {
     display: grid;
+    margin-top: 20px;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 2.5rem;
     justify-items: center;
   }
+`;
+
+export const Name = styled.h1`
+  font-size: 2rem;
+  margin-top: 20px;
+`;
+
+export const UserDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  margin-top: 20px;
 `;
