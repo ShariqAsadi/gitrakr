@@ -45,8 +45,17 @@ export const Name = styled.h1`
 
 export const UserDetails = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 300px;
+  margin-top: 20px;
+`;
+
+export const Info = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-white-light);
+  font-size: 0.95rem;
+  min-width: 320px;
   margin-top: 20px;
 `;

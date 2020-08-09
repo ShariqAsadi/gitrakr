@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
-import { Container, Name, UserDetails } from './Users.styles';
+import { Container, Name, UserDetails, Info } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
+import { MdWork } from 'react-icons/md';
+import { GoLocation, GoCalendar } from 'react-icons/go';
 import Statistic from '../../components/Statistic/Statistic';
 import SocialLink from '../../components/SocialLink/SocialLink';
+import InfoItem from '../../components/InfoItem/InfoItem';
+import moment from 'moment';
 const Users = () => {
   const {
     state: { user },
@@ -30,6 +34,17 @@ const Users = () => {
               text={user.twitter_username}
             />
           </UserDetails>
+          <Info>
+            <InfoItem icon={<MdWork className='icon' />} text={user.company} />
+            <InfoItem
+              icon={<GoLocation className='icon' />}
+              text={user.location}
+            />
+            <InfoItem
+              icon={<GoCalendar className='icon' />}
+              text={moment(user.created_at).format('MMMM Do YYYY')}
+            />
+          </Info>
           <div className='stats'>
             <Statistic heading='Followers' count={user.followers} />
             <Statistic heading='Following' count={user.following} />
