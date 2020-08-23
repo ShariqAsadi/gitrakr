@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Name, UserDetails, Info } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { Doughnut } from 'react-chartjs-2';
+import languageColors from '../../utils/languageColors';
 import { chartData, chartOptions } from '../../utils/chart';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { MdWork } from 'react-icons/md';
@@ -13,9 +14,35 @@ import Card from '../../components/Card/Card';
 import moment from 'moment';
 const Users = () => {
   const {
-    state: { user },
+    state: { user, repos },
   } = useContext(GithubUsersContext);
+  const [languages, setLanguages] = useState([]);
+  const [languagesCount, setLanguagesCount] = useState([]);
+  const [languageBorderColors, setLanguageBorderColors] = useState([]);
+  const [languageBackgroundColors, setLanguageBackgroundColors] = useState([]);
+
   console.log(user);
+  console.log(repos);
+
+  useEffect(() => {
+    let languagesWithCounts = repos.reduce((accumulator, currentValue) => {
+      const { language } = currentValue;
+      if (!language) return accumulator;
+      accumulator[language] = (accumulator[language] || 0) + 1;
+      return accumulator;
+    }, {});
+    setLanguages(Object.keys(languagesWithCounts));
+    setLanguagesCount(Object.values(languagesWithCounts));
+    setLanguageBorderColors(
+      Object.keys(languagesWithCounts).map((color) => languageColors[color])
+    );
+    setLanguageBackgroundColors(
+      Object.keys(languagesWithCounts).map(
+        (color) => `${languageColors[color]}B3`
+      )
+    );
+  }, [repos]);
+
   return (
     <Container>
       <section className='navbar'>
@@ -60,8 +87,10 @@ const Users = () => {
         <Card>
           <Doughnut
             data={chartData({
-              labels: ['First', 'SEcond', 'Third', 'Fourth', 'Fifth', 'Sixth'],
-              data: [23, 1, 32, 55, 123, 166],
+              labels: languages,
+              data: languagesCount,
+              backgroundColor: languageBackgroundColors,
+              borderColor: languageBorderColors,
             })}
             options={chartOptions}
           />

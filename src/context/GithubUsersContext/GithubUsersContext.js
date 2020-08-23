@@ -1,10 +1,12 @@
 import React, { useReducer } from 'react';
-import { userData } from '../../api/mockUserData';
+import { userData } from '../../api/mocks/mockUserData';
+import { repoData } from '../../api/mocks/mockRepoData';
 
 const GithubUsersContext = React.createContext();
 
 const initialState = {
   user: userData,
+  repos: repoData,
 };
 
 const userReducer = (state, action) => {
