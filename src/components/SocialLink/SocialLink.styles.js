@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   a {
     margin-left: 0.2em;
-    color: var(--clr-yellow);
+    color: var(--clr-red);
     text-decoration: none;
     cursor: pointer;
   }

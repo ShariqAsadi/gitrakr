@@ -5,12 +5,12 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--clr-yellow-shade);
+  border: 1px solid var(--clr-red);
   padding: 1rem;
   min-width: 156px;
 
   span:first-child {
-    color: var(--clr-yellow);
+    color: var(--clr-red);
     font-size: 1.7rem;
   }
 

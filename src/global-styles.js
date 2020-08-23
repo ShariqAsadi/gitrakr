@@ -15,6 +15,9 @@ const GlobalStyles = createGlobalStyle`
     --clr-placeholder-blue: rgb(46 144 239 / 70%);
     --clr-yellow: #ffb515;
     --clr-yellow-shade: #ff9a00;
+    --clr-red: #E91E63;
+    --clr-red-shade1: rgba(233, 30, 99, 0.19);
+    --clr-red-shade2: rgba(233, 30, 99, 0.23);
   }
   body {
     min-height: 100vh;

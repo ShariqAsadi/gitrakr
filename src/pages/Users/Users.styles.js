@@ -21,7 +21,7 @@ export const Container = styled.main`
     width: 150px;
     height: 150px;
     border-radius: 100%;
-    border: 0.5rem solid var(--clr-yellow);
+    border: 0.5rem solid var(--clr-red);
   }
 
   .icon {

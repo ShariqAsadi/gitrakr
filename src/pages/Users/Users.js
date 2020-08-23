@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { Container, Name, UserDetails, Info } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
+import { Doughnut } from 'react-chartjs-2';
+import { chartData, chartOptions } from '../../utils/chart';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { MdWork } from 'react-icons/md';
 import { GoLocation, GoCalendar } from 'react-icons/go';
 import Statistic from '../../components/Statistic/Statistic';
 import SocialLink from '../../components/SocialLink/SocialLink';
 import InfoItem from '../../components/InfoItem/InfoItem';
+import Card from '../../components/Card/Card';
 import moment from 'moment';
 const Users = () => {
   const {
@@ -53,6 +56,17 @@ const Users = () => {
           </div>
         </div>
       </section>
+      <div>
+        <Card>
+          <Doughnut
+            data={chartData({
+              labels: ['First', 'SEcond', 'Third', 'Fourth', 'Fifth', 'Sixth'],
+              data: [23, 1, 32, 55, 123, 166],
+            })}
+            options={chartOptions}
+          />
+        </Card>
+      </div>
     </Container>
   );
 };
