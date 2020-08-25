@@ -5,15 +5,14 @@ export const chartData = ({ labels, data, backgroundColor, borderColor }) => ({
       data: data,
       backgroundColor: backgroundColor,
       borderColor: borderColor,
-      borderWidth: 2,
+      borderWidth: 1,
     },
   ],
 });
 
 export const chartOptions = {
   title: {
-    display: true,
-    text: 'Most used languages',
+    display: false,
   },
   legend: {
     display: true,

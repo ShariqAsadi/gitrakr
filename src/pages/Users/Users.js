@@ -1,8 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Container, Name, UserDetails, Info } from './Users.styles';
+import React, { useContext } from 'react';
+import {
+  Container,
+  Name,
+  UserDetails,
+  Info,
+  ChartContainer,
+  Label,
+} from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
-import { Doughnut } from 'react-chartjs-2';
-import languageColors from '../../utils/languageColors';
+import { Doughnut, Pie } from 'react-chartjs-2';
+import useChart from '../../hooks/useChart';
 import { chartData, chartOptions } from '../../utils/chart';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { MdWork } from 'react-icons/md';
@@ -16,32 +23,20 @@ const Users = () => {
   const {
     state: { user, repos },
   } = useContext(GithubUsersContext);
-  const [languages, setLanguages] = useState([]);
-  const [languagesCount, setLanguagesCount] = useState([]);
-  const [languageBorderColors, setLanguageBorderColors] = useState([]);
-  const [languageBackgroundColors, setLanguageBackgroundColors] = useState([]);
 
   console.log(user);
   console.log(repos);
 
-  useEffect(() => {
-    let languagesWithCounts = repos.reduce((accumulator, currentValue) => {
-      const { language } = currentValue;
-      if (!language) return accumulator;
-      accumulator[language] = (accumulator[language] || 0) + 1;
-      return accumulator;
-    }, {});
-    setLanguages(Object.keys(languagesWithCounts));
-    setLanguagesCount(Object.values(languagesWithCounts));
-    setLanguageBorderColors(
-      Object.keys(languagesWithCounts).map((color) => languageColors[color])
-    );
-    setLanguageBackgroundColors(
-      Object.keys(languagesWithCounts).map(
-        (color) => `${languageColors[color]}B3`
-      )
-    );
-  }, [repos]);
+  const {
+    languages,
+    languagesCount,
+    languageBorderColors,
+    languageBackgroundColors,
+    starLanguages,
+    starLanguagesCount,
+    starLanguagesBorderColors,
+    starLanguagesBackgroundColors,
+  } = useChart(repos);
 
   return (
     <Container>
@@ -83,8 +78,9 @@ const Users = () => {
           </div>
         </div>
       </section>
-      <div>
+      <ChartContainer>
         <Card>
+          <Label>Most used languages</Label>
           <Doughnut
             data={chartData({
               labels: languages,
@@ -93,9 +89,25 @@ const Users = () => {
               borderColor: languageBorderColors,
             })}
             options={chartOptions}
+            width={300}
+            height={300}
           />
         </Card>
-      </div>
+        <Card>
+          <Label>Stars per language</Label>
+          <Pie
+            data={chartData({
+              labels: starLanguages,
+              data: starLanguagesCount,
+              backgroundColor: starLanguagesBackgroundColors,
+              borderColor: starLanguagesBorderColors,
+            })}
+            options={chartOptions}
+            width={300}
+            height={300}
+          />
+        </Card>
+      </ChartContainer>
     </Container>
   );
 };

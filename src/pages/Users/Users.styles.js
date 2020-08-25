@@ -59,3 +59,19 @@ export const Info = styled.div`
   min-width: 320px;
   margin-top: 20px;
 `;
+
+export const ChartContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px auto;
+`;
+
+export const Label = styled.label`
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--clr-black);
+  font-weight: 500;
+  letter-spacing: 1.7px;
+`;

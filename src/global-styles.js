@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     --clr-red: #E91E63;
     --clr-red-shade1: rgba(233, 30, 99, 0.19);
     --clr-red-shade2: rgba(233, 30, 99, 0.23);
+    --clr-light-grey: #f5f5f5;
   }
   body {
     min-height: 100vh;
