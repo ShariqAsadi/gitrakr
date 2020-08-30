@@ -26,7 +26,7 @@ export const Container = styled.main`
 
   .icon {
     vertical-align: middle;
-    font-size: 1.3rem;
+    font-size: 2.08rem;
   }
 
   .stats {
@@ -39,7 +39,7 @@ export const Container = styled.main`
 `;
 
 export const Name = styled.h1`
-  font-size: 2rem;
+  font-size: 3.2rem;
   margin-top: 20px;
 `;
 
@@ -55,7 +55,7 @@ export const Info = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--clr-white-light);
-  font-size: 0.95rem;
+  font-size: 1.52rem;
   min-width: 320px;
   margin-top: 20px;
 `;
@@ -63,14 +63,14 @@ export const Info = styled.div`
 export const ChartContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 10px auto;
 `;
 
 export const Label = styled.label`
   margin-top: 10px;
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   color: var(--clr-black);
   font-weight: 500;
   letter-spacing: 1.7px;

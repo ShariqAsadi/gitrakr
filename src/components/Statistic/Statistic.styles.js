@@ -11,11 +11,11 @@ export const Wrapper = styled.div`
 
   span:first-child {
     color: var(--clr-red);
-    font-size: 1.7rem;
+    font-size: 2.72rem;
   }
 
   span:last-child {
-    font-size: 0.95rem;
+    font-size: 1.52rem;
     margin-top: 5px;
   }
 `;

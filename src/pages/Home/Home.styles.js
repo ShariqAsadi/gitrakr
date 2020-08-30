@@ -21,10 +21,10 @@ export const Grid = styled.div`
     align-items: center;
     transition: all 0.3s ease-in-out;
     h1 {
-      font-size: 2.5rem;
+      font-size: 4rem;
       svg {
         margin-right: 0.2em;
-        font-size: 1.7rem;
+        font-size: 2.72rem;
       }
     }
   }

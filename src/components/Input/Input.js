@@ -10,7 +10,7 @@ const Container = styled.div`
     right: 9px;
     .faSearch {
       color: var(--clr-text-blue);
-      font-size: 1.8rem;
+      font-size: 2.88rem;
     }
   }
 `;
@@ -18,7 +18,7 @@ const Container = styled.div`
 const StyledInput = styled.input`
   outline: none;
   border-radius: 0.25rem;
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-family: 'Inconsolata', monospace;
   border: none;
   background: var(--clr-bg-blue);
@@ -33,7 +33,7 @@ const StyledInput = styled.input`
   }
 
   &::placeholder {
-    font-size: 1.8rem;
+    font-size: 2.88rem;
     color: var(--clr-placeholder-blue);
   }
 `;

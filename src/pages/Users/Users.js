@@ -8,7 +8,7 @@ import {
   Label,
 } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
-import { Doughnut, Pie } from 'react-chartjs-2';
+import { Doughnut, Pie, Bar } from 'react-chartjs-2';
 import useChart from '../../hooks/useChart';
 import { chartData, chartOptions } from '../../utils/chart';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
@@ -87,6 +87,20 @@ const Users = () => {
               data: languagesCount,
               backgroundColor: languageBackgroundColors,
               borderColor: languageBorderColors,
+            })}
+            options={chartOptions}
+            width={300}
+            height={300}
+          />
+        </Card>
+        <Card>
+          <Label>Stars per language</Label>
+          <Bar
+            data={chartData({
+              labels: starLanguages,
+              data: starLanguagesCount,
+              backgroundColor: starLanguagesBackgroundColors,
+              borderColor: starLanguagesBorderColors,
             })}
             options={chartOptions}
             width={300}

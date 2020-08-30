@@ -20,6 +20,9 @@ const GlobalStyles = createGlobalStyle`
     --clr-red-shade2: rgba(233, 30, 99, 0.23);
     --clr-light-grey: #f5f5f5;
   }
+  html {
+    font-size: 62.5%;
+  }
   body {
     min-height: 100vh;
     min-width: 100vw;
