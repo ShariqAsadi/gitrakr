@@ -19,6 +19,7 @@ import SocialLink from '../../components/SocialLink/SocialLink';
 import InfoItem from '../../components/InfoItem/InfoItem';
 import Card from '../../components/Card/Card';
 import moment from 'moment';
+
 const Users = () => {
   const {
     state: { user, repos },
@@ -36,6 +37,7 @@ const Users = () => {
     starLanguagesCount,
     starLanguagesBorderColors,
     starLanguagesBackgroundColors,
+    mostPopularRepos,
   } = useChart(repos);
 
   return (
@@ -61,10 +63,7 @@ const Users = () => {
           </UserDetails>
           <Info>
             <InfoItem icon={<MdWork className='icon' />} text={user.company} />
-            <InfoItem
-              icon={<GoLocation className='icon' />}
-              text={user.location}
-            />
+            <InfoItem icon={<GoLocation className='icon' />} text={user.location} />
             <InfoItem
               icon={<GoCalendar className='icon' />}
               text={moment(user.created_at).format('MMMM Do YYYY')}
@@ -88,21 +87,21 @@ const Users = () => {
               backgroundColor: languageBackgroundColors,
               borderColor: languageBorderColors,
             })}
-            options={chartOptions}
+            options={chartOptions({ showLegend: true })}
             width={300}
             height={300}
           />
         </Card>
         <Card>
-          <Label>Stars per language</Label>
+          <Label>Most popular Repos</Label>
           <Bar
             data={chartData({
-              labels: starLanguages,
-              data: starLanguagesCount,
-              backgroundColor: starLanguagesBackgroundColors,
-              borderColor: starLanguagesBorderColors,
+              labels: mostPopularRepos.labels,
+              data: mostPopularRepos.data,
+              backgroundColor: mostPopularRepos.backgroundColors,
+              borderColor: mostPopularRepos.borderColors,
             })}
-            options={chartOptions}
+            options={chartOptions({ showLegend: false })}
             width={300}
             height={300}
           />
@@ -116,7 +115,7 @@ const Users = () => {
               backgroundColor: starLanguagesBackgroundColors,
               borderColor: starLanguagesBorderColors,
             })}
-            options={chartOptions}
+            options={chartOptions({ showLegend: true })}
             width={300}
             height={300}
           />

@@ -10,12 +10,12 @@ export const chartData = ({ labels, data, backgroundColor, borderColor }) => ({
   ],
 });
 
-export const chartOptions = {
+export const chartOptions = ({ showLegend }) => ({
   title: {
     display: false,
   },
   legend: {
-    display: true,
+    display: showLegend ? true : false,
     position: 'right',
   },
-};
+});
