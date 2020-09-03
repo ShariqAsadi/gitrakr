@@ -28,17 +28,7 @@ const Users = () => {
   console.log(user);
   console.log(repos);
 
-  const {
-    languages,
-    languagesCount,
-    languageBorderColors,
-    languageBackgroundColors,
-    starLanguages,
-    starLanguagesCount,
-    starLanguagesBorderColors,
-    starLanguagesBackgroundColors,
-    mostPopularRepos,
-  } = useChart(repos);
+  const { languages, starLanguages, mostPopularRepos } = useChart(repos);
 
   return (
     <Container>
@@ -82,10 +72,10 @@ const Users = () => {
           <Label>Most used languages</Label>
           <Doughnut
             data={chartData({
-              labels: languages,
-              data: languagesCount,
-              backgroundColor: languageBackgroundColors,
-              borderColor: languageBorderColors,
+              labels: languages.labels,
+              data: languages.data,
+              backgroundColor: languages.backgroundColors,
+              borderColor: languages.borderColors,
             })}
             options={chartOptions({ showLegend: true })}
             width={300}
@@ -110,10 +100,10 @@ const Users = () => {
           <Label>Stars per language</Label>
           <Pie
             data={chartData({
-              labels: starLanguages,
-              data: starLanguagesCount,
-              backgroundColor: starLanguagesBackgroundColors,
-              borderColor: starLanguagesBorderColors,
+              labels: starLanguages.labels,
+              data: starLanguages.data,
+              backgroundColor: starLanguages.backgroundColors,
+              borderColor: starLanguages.borderColors,
             })}
             options={chartOptions({ showLegend: true })}
             width={300}

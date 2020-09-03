@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import languageColors from '../utils/languageColors';
 const useChart = (repos) => {
-  const [languages, setLanguages] = useState([]);
-  const [languagesCount, setLanguagesCount] = useState([]);
-  const [languageBorderColors, setLanguageBorderColors] = useState([]);
-  const [languageBackgroundColors, setLanguageBackgroundColors] = useState([]);
-  const [starLanguages, setStarLanguages] = useState([]);
-  const [starLanguagesCount, setStarLanguagesCount] = useState([]);
-  const [starLanguagesBorderColors, setStarLanguagesBorderColors] = useState([]);
-  const [starLanguagesBackgroundColors, setStarLanguagesBackgroundColors] = useState([]);
+  const [languages, setLanguages] = useState({
+    labels: [],
+    data: [],
+    borderColors: [],
+    backgroundColors: [],
+  });
+  const [starLanguages, setStarLanguages] = useState({
+    labels: [],
+    data: [],
+    borderColors: [],
+    backgroundColors: [],
+  });
 
   const [mostPopularRepos, setMostPopularRepos] = useState({
     labels: [],
@@ -45,6 +49,34 @@ const useChart = (repos) => {
     let popularReposData = popularRepos.map(
       (popularRepo) => popularRepo.stargazers_count
     );
+
+    //Setting Label, Data and colors for the most used languages chart
+    setLanguages((prevState) => ({
+      ...prevState,
+      labels: Object.keys(languagesWithCounts),
+      data: Object.values(languagesWithCounts),
+      borderColors: Object.keys(languagesWithCounts).map(
+        (color) => languageColors[color]
+      ),
+      backgroundColors: Object.keys(languagesWithCounts).map(
+        (color) => `${languageColors[color]}B3`
+      ),
+    }));
+
+    //Setting Label, Data and colors for the stars per language chart
+    setStarLanguages((prevState) => ({
+      ...prevState,
+      labels: Object.keys(starsByLanguageWithCounts),
+      data: Object.values(starsByLanguageWithCounts),
+      borderColors: Object.keys(starsByLanguageWithCounts).map(
+        (color) => languageColors[color]
+      ),
+      backgroundColors: Object.keys(starsByLanguageWithCounts).map(
+        (color) => `${languageColors[color]}B3`
+      ),
+    }));
+
+    //Setting Label, Data and colors for the most popular languages
     setMostPopularRepos((prevState) => ({
       ...prevState,
       labels: popularReposLabels,
@@ -66,37 +98,11 @@ const useChart = (repos) => {
         'rgba(255, 159, 64, 0.2)',
       ],
     }));
-
-    //Setting Label, Data and colors for the most used languages chart
-    setLanguages(Object.keys(languagesWithCounts));
-    setLanguagesCount(Object.values(languagesWithCounts));
-    setLanguageBorderColors(
-      Object.keys(languagesWithCounts).map((color) => languageColors[color])
-    );
-    setLanguageBackgroundColors(
-      Object.keys(languagesWithCounts).map((color) => `${languageColors[color]}B3`)
-    );
-
-    //Setting Label, Data and colors for the stars per language chart
-    setStarLanguages(Object.keys(starsByLanguageWithCounts));
-    setStarLanguagesCount(Object.values(starsByLanguageWithCounts));
-    setStarLanguagesBorderColors(
-      Object.keys(starsByLanguageWithCounts).map((color) => languageColors[color])
-    );
-    setStarLanguagesBackgroundColors(
-      Object.keys(starsByLanguageWithCounts).map((color) => `${languageColors[color]}B3`)
-    );
   }, [repos]);
 
   return {
     languages,
-    languagesCount,
-    languageBorderColors,
-    languageBackgroundColors,
     starLanguages,
-    starLanguagesCount,
-    starLanguagesBorderColors,
-    starLanguagesBackgroundColors,
     mostPopularRepos,
   };
 };
