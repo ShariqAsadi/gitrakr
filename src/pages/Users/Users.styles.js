@@ -8,21 +8,6 @@ export const Container = styled.main`
   .navbar {
     width: 100%;
   }
-  .user-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 0px;
-  }
-
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    border: 0.5rem solid var(--clr-red);
-  }
 
   .icon {
     vertical-align: middle;
@@ -54,17 +39,17 @@ export const Info = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--clr-white-light);
-  font-size: 1.52rem;
+  color: var(--clr-red);
+  font-size: 1.1rem;
   min-width: 320px;
   margin-top: 20px;
 `;
 
 export const ChartContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  padding: 1rem 7rem;
+  gap: 9rem;
 `;
 
 export const Label = styled.label`
@@ -74,4 +59,43 @@ export const Label = styled.label`
   color: var(--clr-black);
   font-weight: 500;
   letter-spacing: 1.7px;
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  place-items: center;
+  gap: 9rem;
+  padding: 1rem 7rem;
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 0.5rem solid var(--clr-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const UserContainer = styled.div`
+  display: flex;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 2.5rem;
+`;
+
+export const UserInfo = styled.div`
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 `;

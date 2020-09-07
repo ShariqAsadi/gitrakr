@@ -6,6 +6,10 @@ import {
   Info,
   ChartContainer,
   Label,
+  Grid,
+  ImageContainer,
+  UserContainer,
+  UserInfo,
 } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { Doughnut, Pie, Bar } from 'react-chartjs-2';
@@ -36,36 +40,46 @@ const Users = () => {
         <div>Navbar</div>
       </section>
       <section id='main'>
-        <div className='user-info'>
-          <img className='avatar' src={user.avatar_url} alt='avatar' />
-          <Name>{user.name}</Name>
-          <UserDetails>
-            <SocialLink
-              icon={<AiFillGithub className='icon' />}
-              href={user.html_url}
-              text={user.login}
-            />
-            <SocialLink
-              icon={<AiOutlineTwitter className='icon' />}
-              href={`https://www.twitter.com/${user.twitter_username}`}
-              text={user.twitter_username}
-            />
-          </UserDetails>
-          <Info>
-            <InfoItem icon={<MdWork className='icon' />} text={user.company} />
-            <InfoItem icon={<GoLocation className='icon' />} text={user.location} />
-            <InfoItem
-              icon={<GoCalendar className='icon' />}
-              text={moment(user.created_at).format('MMMM Do YYYY')}
-            />
-          </Info>
-          <div className='stats'>
-            <Statistic heading='Followers' count={user.followers} />
-            <Statistic heading='Following' count={user.following} />
-            <Statistic heading='Repos' count={user.public_repos} />
-            <Statistic heading='Gists' count={user.public_gists} />
-          </div>
-        </div>
+        <Grid>
+          <Card>
+            <UserContainer>
+              <ImageContainer>
+                <img src={user.avatar_url} alt='avatar' />
+              </ImageContainer>
+              <UserInfo>
+                <Name>{user.name}</Name>
+                <div>{user.bio}</div>
+                <UserDetails>
+                  <SocialLink
+                    icon={<AiFillGithub className='icon' />}
+                    href={user.html_url}
+                    text={user.login}
+                  />
+                  <SocialLink
+                    icon={<AiOutlineTwitter className='icon' />}
+                    href={`https://www.twitter.com/${user.twitter_username}`}
+                    text={user.twitter_username}
+                  />
+                </UserDetails>
+                <Info>
+                  <InfoItem icon={<MdWork className='icon' />} text={user.company} />
+                  <InfoItem icon={<GoLocation className='icon' />} text={user.location} />
+                  <InfoItem
+                    icon={<GoCalendar className='icon' />}
+                    text={moment(user.created_at).format('MMMM Do YYYY')}
+                  />
+                </Info>
+                {/* <div className='stats'>
+                <Statistic heading='Followers' count={user.followers} />
+                <Statistic heading='Following' count={user.following} />
+                <Statistic heading='Repos' count={user.public_repos} />
+                <Statistic heading='Gists' count={user.public_gists} />
+              </div> */}
+              </UserInfo>
+            </UserContainer>
+          </Card>
+          <Card>Hello</Card>
+        </Grid>
       </section>
       <ChartContainer>
         <Card>

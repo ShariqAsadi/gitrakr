@@ -41,6 +41,7 @@ const useChart = (repos) => {
       }
       return accumulator;
     }, {});
+
     //Calculating the popular repos
     let popularRepos = repos
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
