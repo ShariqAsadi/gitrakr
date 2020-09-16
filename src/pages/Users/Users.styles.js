@@ -23,6 +23,12 @@ export const Container = styled.main`
   }
 `;
 
+export const Content = styled.section`
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+`;
+
 export const Name = styled.h1`
   font-size: 3.2rem;
   margin-top: 20px;
@@ -48,7 +54,6 @@ export const Info = styled.div`
 export const ChartContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-  padding: 1rem 7rem;
   gap: 9rem;
 `;
 
@@ -64,33 +69,32 @@ export const Label = styled.label`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-  place-items: center;
   gap: 9rem;
-  padding: 1rem 7rem;
-`;
-
-export const ImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    border: 0.5rem solid var(--clr-red);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 20px 0px;
+  @media (max-width: 560px) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 `;
 
+export const ImageContainer = styled.div``;
+
 export const UserContainer = styled.div`
   display: flex;
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  padding: 2.5rem;
+  figure {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      border: 0.5rem solid var(--clr-red);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 `;
 
 export const UserInfo = styled.div`

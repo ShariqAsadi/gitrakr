@@ -10,6 +10,7 @@ import {
   ImageContainer,
   UserContainer,
   UserInfo,
+  Content,
 } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { Doughnut, Pie, Bar } from 'react-chartjs-2';
@@ -36,95 +37,100 @@ const Users = () => {
 
   return (
     <Container>
-      <section className='navbar'>
+      {/* <section className='navbar'>
         <div>Navbar</div>
-      </section>
-      <section id='main'>
-        <Grid>
-          <Card>
-            <UserContainer>
-              <ImageContainer>
-                <img src={user.avatar_url} alt='avatar' />
-              </ImageContainer>
-              <UserInfo>
-                <Name>{user.name}</Name>
-                <div>{user.bio}</div>
-                <UserDetails>
-                  <SocialLink
-                    icon={<AiFillGithub className='icon' />}
-                    href={user.html_url}
-                    text={user.login}
-                  />
-                  <SocialLink
-                    icon={<AiOutlineTwitter className='icon' />}
-                    href={`https://www.twitter.com/${user.twitter_username}`}
-                    text={user.twitter_username}
-                  />
-                </UserDetails>
-                <Info>
-                  <InfoItem icon={<MdWork className='icon' />} text={user.company} />
-                  <InfoItem icon={<GoLocation className='icon' />} text={user.location} />
-                  <InfoItem
-                    icon={<GoCalendar className='icon' />}
-                    text={moment(user.created_at).format('MMMM Do YYYY')}
-                  />
-                </Info>
-                {/* <div className='stats'>
+      </section> */}
+      <Content>
+        <section>
+          <Grid>
+            <Card>
+              <UserContainer>
+                <figure>
+                  <img src={user.avatar_url} alt='avatar' />
+                </figure>
+                <UserInfo>
+                  <Name>{user.name}</Name>
+                  <div>{user.bio}</div>
+                  <UserDetails>
+                    <SocialLink
+                      icon={<AiFillGithub className='icon' />}
+                      href={user.html_url}
+                      text={user.login}
+                    />
+                    <SocialLink
+                      icon={<AiOutlineTwitter className='icon' />}
+                      href={`https://www.twitter.com/${user.twitter_username}`}
+                      text={user.twitter_username}
+                    />
+                  </UserDetails>
+                  <Info>
+                    <InfoItem icon={<MdWork className='icon' />} text={user.company} />
+                    <InfoItem
+                      icon={<GoLocation className='icon' />}
+                      text={user.location}
+                    />
+                    <InfoItem
+                      icon={<GoCalendar className='icon' />}
+                      text={moment(user.created_at).format('MMMM Do YYYY')}
+                    />
+                  </Info>
+                  {/* <div className='stats'>
                 <Statistic heading='Followers' count={user.followers} />
                 <Statistic heading='Following' count={user.following} />
                 <Statistic heading='Repos' count={user.public_repos} />
                 <Statistic heading='Gists' count={user.public_gists} />
               </div> */}
-              </UserInfo>
-            </UserContainer>
+                </UserInfo>
+              </UserContainer>
+            </Card>
+            <Card>Hello</Card>
+          </Grid>
+        </section>
+        <ChartContainer>
+          <Card>
+            <Label>Most used languages</Label>
+            <Doughnut
+              data={chartData({
+                labels: languages.labels,
+                data: languages.data,
+                backgroundColor: languages.backgroundColors,
+                borderColor: languages.borderColors,
+              })}
+              options={chartOptions({ showLegend: true })}
+              width={300}
+              height={300}
+            />
           </Card>
-          <Card>Hello</Card>
-        </Grid>
-      </section>
-      <ChartContainer>
-        <Card>
-          <Label>Most used languages</Label>
-          <Doughnut
-            data={chartData({
-              labels: languages.labels,
-              data: languages.data,
-              backgroundColor: languages.backgroundColors,
-              borderColor: languages.borderColors,
-            })}
-            options={chartOptions({ showLegend: true })}
-            width={300}
-            height={300}
-          />
-        </Card>
-        <Card>
-          <Label>Most popular Repos</Label>
-          <Bar
-            data={chartData({
-              labels: mostPopularRepos.labels,
-              data: mostPopularRepos.data,
-              backgroundColor: mostPopularRepos.backgroundColors,
-              borderColor: mostPopularRepos.borderColors,
-            })}
-            options={chartOptions({ showLegend: false })}
-            width={300}
-            height={300}
-          />
-        </Card>
-        <Card>
-          <Label>Stars per language</Label>
-          <Pie
-            data={chartData({
-              labels: starLanguages.labels,
-              data: starLanguages.data,
-              backgroundColor: starLanguages.backgroundColors,
-              borderColor: starLanguages.borderColors,
-            })}
-            options={chartOptions({ showLegend: true })}
-            width={300}
-            height={300}
-          />
-        </Card>
-      </ChartContainer>
+          <Card>
+            <Label>Most popular Repos</Label>
+            <Bar
+              data={chartData({
+                labels: mostPopularRepos.labels,
+                data: mostPopularRepos.data,
+                backgroundColor: mostPopularRepos.backgroundColors,
+                borderColor: mostPopularRepos.borderColors,
+              })}
+              options={chartOptions({ showLegend: false })}
+              width={300}
+              height={300}
+            />
+          </Card>
+          <Card>
+            <Label>Stars per language</Label>
+            <Pie
+              data={chartData({
+                labels: starLanguages.labels,
+                data: starLanguages.data,
+                backgroundColor: starLanguages.backgroundColors,
+                borderColor: starLanguages.borderColors,
+              })}
+              options={chartOptions({ showLegend: true })}
+              width={300}
+              height={300}
+            />
+          </Card>
+        </ChartContainer>
+      </Content>
     </Container>
   );
 };
