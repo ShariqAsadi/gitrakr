@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Container = styled.main`
   background-color: var(--clr-black);
@@ -15,11 +15,11 @@ export const Container = styled.main`
   }
 
   .stats {
-    display: grid;
-    margin-top: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 2.5rem;
-    justify-items: center;
+    display: flex;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -36,24 +36,29 @@ export const Name = styled.h1`
 
 export const UserDetails = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  > * {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const Info = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   color: var(--clr-red);
   font-size: 1.1rem;
-  min-width: 320px;
-  margin-top: 20px;
+  > * {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const ChartContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 9rem;
 `;
 
@@ -76,10 +81,16 @@ export const Grid = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div``;
+export const Bio = styled.div`
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  line-height: 20px;
+`;
 
 export const UserContainer = styled.div`
   display: flex;
+  flex-direction: column;
   figure {
     padding: 0.5rem;
     display: flex;
@@ -102,4 +113,7 @@ export const UserInfo = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  @media (max-width: 600px) {
+    margin-left: 0px;
+  }
 `;

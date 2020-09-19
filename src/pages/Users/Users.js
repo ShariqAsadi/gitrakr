@@ -7,7 +7,7 @@ import {
   ChartContainer,
   Label,
   Grid,
-  ImageContainer,
+  Bio,
   UserContainer,
   UserInfo,
   Content,
@@ -50,7 +50,7 @@ const Users = () => {
                 </figure>
                 <UserInfo>
                   <Name>{user.name}</Name>
-                  <div>{user.bio}</div>
+                  <Bio>{user.bio}</Bio>
                   <UserDetails>
                     <SocialLink
                       icon={<AiFillGithub className='icon' />}
@@ -74,12 +74,12 @@ const Users = () => {
                       text={moment(user.created_at).format('MMMM Do YYYY')}
                     />
                   </Info>
-                  {/* <div className='stats'>
-                <Statistic heading='Followers' count={user.followers} />
-                <Statistic heading='Following' count={user.following} />
-                <Statistic heading='Repos' count={user.public_repos} />
-                <Statistic heading='Gists' count={user.public_gists} />
-              </div> */}
+                  <div className='stats'>
+                    <Statistic heading='Followers' count={user.followers} />
+                    <Statistic heading='Following' count={user.following} />
+                    <Statistic heading='Repos' count={user.public_repos} />
+                    <Statistic heading='Gists' count={user.public_gists} />
+                  </div>
                 </UserInfo>
               </UserContainer>
             </Card>

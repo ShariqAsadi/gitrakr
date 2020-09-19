@@ -1,13 +1,12 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--clr-red);
   padding: 1rem;
-  min-width: 156px;
+  min-width: 12rem;
 
   span:first-child {
     color: var(--clr-red);
