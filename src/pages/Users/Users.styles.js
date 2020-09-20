@@ -13,14 +13,14 @@ export const Container = styled.main`
     vertical-align: middle;
     font-size: 2.08rem;
   }
+`;
 
-  .stats {
-    display: flex;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+export const Stats = styled.div`
+  display: flex;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Content = styled.section`
@@ -32,6 +32,7 @@ export const Content = styled.section`
 export const Name = styled.h1`
   font-size: 3.2rem;
   margin-top: 20px;
+  color: var(--clr-red);
 `;
 
 export const UserDetails = styled.div`
@@ -66,19 +67,16 @@ export const Label = styled.label`
   margin-top: 10px;
   display: inline-block;
   font-size: 2.4rem;
-  color: var(--clr-black);
+  color: var(--clr-red);
   font-weight: 500;
   letter-spacing: 1.7px;
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  grid-template-columns: 1fr;
   gap: 9rem;
   padding: 20px 0px;
-  @media (max-width: 560px) {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  }
 `;
 
 export const Bio = styled.div`
@@ -86,6 +84,7 @@ export const Bio = styled.div`
   font-weight: 400;
   letter-spacing: 1.3px;
   line-height: 20px;
+  color: var(--clr-black);
 `;
 
 export const UserContainer = styled.div`
@@ -109,11 +108,7 @@ export const UserContainer = styled.div`
 `;
 
 export const UserInfo = styled.div`
-  margin-left: 2.5rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  @media (max-width: 600px) {
-    margin-left: 0px;
-  }
 `;

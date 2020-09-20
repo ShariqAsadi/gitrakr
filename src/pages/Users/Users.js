@@ -11,6 +11,7 @@ import {
   UserContainer,
   UserInfo,
   Content,
+  Stats,
 } from './Users.styles';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { Doughnut, Pie, Bar } from 'react-chartjs-2';
@@ -74,16 +75,15 @@ const Users = () => {
                       text={moment(user.created_at).format('MMMM Do YYYY')}
                     />
                   </Info>
-                  <div className='stats'>
+                  <Stats>
                     <Statistic heading='Followers' count={user.followers} />
                     <Statistic heading='Following' count={user.following} />
                     <Statistic heading='Repos' count={user.public_repos} />
                     <Statistic heading='Gists' count={user.public_gists} />
-                  </div>
+                  </Stats>
                 </UserInfo>
               </UserContainer>
             </Card>
-            <Card>Hello</Card>
           </Grid>
         </section>
         <ChartContainer>
