@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { Container, Grid, Items } from './Home.styles';

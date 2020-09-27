@@ -18,6 +18,8 @@ const userReducer = (state, action) => {
       return { ...state, repos: action.payload };
     case 'SET_QUERY':
       return { ...state, query: action.payload };
+    default:
+      throw new Error('Something went wrong.');
   }
 };
 
