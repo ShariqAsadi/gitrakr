@@ -32,7 +32,7 @@ export const Content = styled.section`
 export const Name = styled.h1`
   font-size: 3.2rem;
   margin-top: 20px;
-  color: var(--clr-red);
+  color: var(--clr-text-blue);
 `;
 
 export const UserDetails = styled.div`
@@ -50,7 +50,6 @@ export const Info = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  color: var(--clr-red);
   font-size: 1.1rem;
   > * {
     margin-top: 1.5rem;
@@ -67,7 +66,7 @@ export const Label = styled.label`
   margin-top: 10px;
   display: inline-block;
   font-size: 2.4rem;
-  color: var(--clr-red);
+  color: var(--clr-bg-blue);
   font-weight: 500;
   letter-spacing: 1.7px;
 `;
@@ -99,7 +98,7 @@ export const UserContainer = styled.div`
       width: 150px;
       height: 150px;
       border-radius: 100%;
-      border: 0.5rem solid var(--clr-red);
+      border: 0.5rem solid var(--clr-placeholder-blue);
       display: flex;
       justify-content: center;
       align-items: center;

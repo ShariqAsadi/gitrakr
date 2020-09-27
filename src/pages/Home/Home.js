@@ -7,16 +7,17 @@ import Input from '../../components/Input/Input';
 
 const Home = () => {
   const history = useHistory();
-  const data = useContext(GithubUsersContext);
-  const [search, setSearch] = useState('');
+  const context = useContext(GithubUsersContext);
+  const { state, dispatch } = context;
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
+    const { value } = e.target;
+    dispatch({ type: 'SET_QUERY', payload: value });
   };
 
   const onSearch = (e) => {
     e.preventDefault();
-    history.push('/users');
+    history.push(`/users/${state.query}`);
   };
 
   return (
@@ -31,7 +32,7 @@ const Home = () => {
               </h1>
               <Input
                 placeholder='Search for a Github user'
-                value={search}
+                value={state.query}
                 onChange={handleSearch}
               />
             </form>

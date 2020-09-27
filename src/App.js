@@ -12,7 +12,7 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path='/users'>
+            <Route exact path='/users/:id'>
               <Users />
             </Route>
           </GithubUsersProvider>

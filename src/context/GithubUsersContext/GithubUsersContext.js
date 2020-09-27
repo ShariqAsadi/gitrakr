@@ -7,12 +7,17 @@ const GithubUsersContext = React.createContext();
 const initialState = {
   user: userData,
   repos: repoData,
+  query: '',
 };
 
 const userReducer = (state, action) => {
   switch (action.type) {
-    case 'UPDATE_USER':
+    case 'SET_USER':
       return { ...state, user: action.payload };
+    case 'SET_REPO':
+      return { ...state, repos: action.payload };
+    case 'SET_QUERY':
+      return { ...state, query: action.payload };
   }
 };
 
