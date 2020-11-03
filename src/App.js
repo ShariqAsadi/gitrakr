@@ -13,9 +13,6 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/users/:id' component={Users} />
-            <Route exact path='/jobs'>
-              <div>Jobs</div>
-            </Route>
             <Route path='*' component={NotFound} />
           </Switch>
         </Router>

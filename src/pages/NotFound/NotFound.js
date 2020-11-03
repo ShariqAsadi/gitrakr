@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import Button from '../../components/Button/Button';
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -21,8 +22,8 @@ const Container = styled.div`
 
 const NotFound = () => {
   const history = useHistory();
+
   const redirect = () => {
-    console.log('woirks?');
     history.push('/');
   };
 

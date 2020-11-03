@@ -63,13 +63,27 @@ export const ChartContainer = styled.div`
 `;
 
 export const Label = styled.label`
-  margin-top: 10px;
+  margin: 10px 0px;
   display: inline-block;
   font-size: 2.4rem;
   color: var(--clr-bg-blue);
   font-weight: 500;
   letter-spacing: 1.7px;
 `;
+
+export const SubLabel = styled.label`
+  font-size: 1.5rem;
+  display: block;
+  font-weight: 400;
+  color: var(--clr-bg-blue);
+`;
+
+export const Loader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 90px);
+`
 
 export const Grid = styled.div`
   display: grid;

@@ -8,9 +8,8 @@ export const Container = styled.div`
 export const Grid = styled.div`
   display: grid;
   height: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-
+  place-items: center;
+  
   > div {
     height: 100%;
     width: 100%;
@@ -23,15 +22,10 @@ export const Grid = styled.div`
     h1 {
       font-size: 4rem;
       svg {
-        margin-right: 0.2em;
+        margin-left: 0.5em;
         font-size: 2.72rem;
       }
     }
-  }
-
-  @media (max-width: 768px) {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
   }
 `;
 
@@ -43,4 +37,12 @@ export const Items = styled.div`
     align-items: center;
     justify-content: space-between;
   }
+`;
+
+
+export const Error = styled.div`
+  color: #B00020;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 20px;
 `;

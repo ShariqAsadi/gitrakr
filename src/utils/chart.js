@@ -16,6 +16,6 @@ export const chartOptions = ({ showLegend }) => ({
   },
   legend: {
     display: showLegend ? true : false,
-    position: 'right',
+    position: 'bottom',
   },
 });

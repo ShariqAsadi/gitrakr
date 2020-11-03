@@ -4,13 +4,21 @@ import { FaSearch } from 'react-icons/fa';
 
 const Container = styled.div`
   position: relative;
+  width: inherit;
   span {
     position: absolute;
     top: 13px;
     right: 9px;
+
+    @media (max-width: 550px) {
+      top: 21px;
+    }
     .faSearch {
       color: var(--clr-text-blue);
       font-size: 2.88rem;
+      @media (max-width: 550px) {
+        font-size: 1.6rem;
+      }
     }
   }
 `;
@@ -25,6 +33,11 @@ const StyledInput = styled.input`
   color: var(--clr-text-blue);
   padding: 10px 50px;
   text-align: center;
+  width: inherit;
+
+  @media (max-width: 550px) {
+    padding: 10px 30px;
+  }
 
   &:focus {
     &::placeholder {
@@ -38,7 +51,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = (props) => {
+const Input = props => {
   return (
     <>
       <Container>
