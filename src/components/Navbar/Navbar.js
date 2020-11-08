@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <Link to='/'>Gitrakr</Link>
+      <Link to='/'>GiTrakr</Link>
       <form onSubmit={onSearch}>
         <Search>
           <Input value={query} onChange={onUserChange} placeholder='Search' />

@@ -9,7 +9,7 @@ export const Grid = styled.div`
   display: grid;
   height: 100%;
   place-items: center;
-  
+
   > div {
     height: 100%;
     width: 100%;
@@ -38,13 +38,14 @@ export const Items = styled.div`
     @media (max-width: 550px) {
       width: 80vw;
     }
+    span {
+      letter-spacing: 5px;
+    }
   }
-  
 `;
 
-
 export const Error = styled.div`
-  color: #B00020;
+  color: #b00020;
   font-size: 1.6rem;
   font-weight: 500;
   margin-top: 20px;

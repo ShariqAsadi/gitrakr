@@ -9,17 +9,17 @@ const Home = () => {
   const history = useHistory();
   const context = useContext(GithubUsersContext);
   const { state, dispatch } = context;
-  const {error} = state;
+  const { error } = state;
   useEffect(() => {
-    dispatch({type: 'SET_QUERY', payload: ''})
-  }, [dispatch])
+    dispatch({ type: 'SET_QUERY', payload: '' });
+  }, [dispatch]);
 
-  const handleSearch = (e) => {
+  const handleSearch = e => {
     const { value } = e.target;
     dispatch({ type: 'SET_QUERY', payload: value });
   };
 
-  const onSearch = (e) => {
+  const onSearch = e => {
     e.preventDefault();
     dispatch({ type: 'CLEAR_ERROR' });
     history.push(`/users/${state.query}`);
@@ -32,7 +32,7 @@ const Home = () => {
           <Items>
             <form onSubmit={onSearch}>
               <h1>
-                <span>Gitrakr</span>
+                <span>GiTrakr</span>
                 <FiGithub />
               </h1>
               <Input
@@ -40,7 +40,7 @@ const Home = () => {
                 value={state.query}
                 onChange={handleSearch}
               />
-            {error.isError && <Error>{error.message}</Error>}
+              {error.isError && <Error>{error.message}</Error>}
             </form>
           </Items>
         </div>

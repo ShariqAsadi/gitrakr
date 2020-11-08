@@ -20,8 +20,8 @@ export const Nav = styled.nav`
 `;
 
 export const Search = styled.div`
-    font-size: 15px;
-    width: 40vw;
+  font-size: 15px;
+  width: 40vw;
 `;
 
 export const Icon = styled.div`

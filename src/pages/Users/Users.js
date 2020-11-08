@@ -14,7 +14,7 @@ import {
   Content,
   Stats,
   SubLabel,
-  Loader
+  Loader,
 } from './Users.styles';
 import {
   GithubUsersContext,
@@ -65,7 +65,13 @@ const Users = () => {
       <Content>
         {loading ? (
           <Loader>
-            <ScaleLoader color='#2E90EF' height='35px' width='10px' radius='5px' margin='5px' />
+            <ScaleLoader
+              color='#2E90EF'
+              height='35px'
+              width='10px'
+              radius='5px'
+              margin='5px'
+            />
           </Loader>
         ) : (
           <>
