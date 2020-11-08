@@ -7,18 +7,11 @@ const Container = styled.div`
   width: inherit;
   span {
     position: absolute;
-    top: 13px;
-    right: 9px;
-
-    @media (max-width: 550px) {
-      top: 21px;
-    }
+    top: 17px;
+    left: 9px;
     .faSearch {
       color: var(--clr-text-blue);
-      font-size: 2.88rem;
-      @media (max-width: 550px) {
-        font-size: 1.6rem;
-      }
+      font-size: 2rem;
     }
   }
 `;
@@ -26,19 +19,14 @@ const Container = styled.div`
 const StyledInput = styled.input`
   outline: none;
   border-radius: 0.25rem;
-  font-size: 3.2rem;
   font-family: 'Inconsolata', monospace;
   border: none;
   background: var(--clr-bg-blue);
   color: var(--clr-text-blue);
-  padding: 10px 50px;
+  padding: 10px 20px 10px 50px;
   text-align: center;
-  width: inherit;
-
-  @media (max-width: 550px) {
-    padding: 10px 30px;
-  }
-
+  font-size: 3rem;
+  width: 100%;
   &:focus {
     &::placeholder {
       color: transparent;
@@ -46,7 +34,6 @@ const StyledInput = styled.input`
   }
 
   &::placeholder {
-    font-size: 2.88rem;
     color: var(--clr-placeholder-blue);
   }
 `;

@@ -4,7 +4,6 @@ export const Container = styled.main`
   background-color: var(--clr-black);
   color: var(--clr-white-light);
   min-height: 100vh;
-  min-width: 100vw;
   .navbar {
     width: 100%;
   }

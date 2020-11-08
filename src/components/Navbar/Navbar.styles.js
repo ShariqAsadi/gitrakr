@@ -1,14 +1,14 @@
 import styled from 'styled-components/macro';
 
 export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 5fr 1fr;
+  column-gap: 1.5rem;
   font-size: 16px;
   background-color: #000;
   color: var(--clr-white);
-  justify-content: space-between;
-  padding: 10px 40px;
+  padding: 10px 20px;
 
   a {
     font-size: 20px;
@@ -20,11 +20,8 @@ export const Nav = styled.nav`
 `;
 
 export const Search = styled.div`
-  width: 300px;
-  @media (max-width: 550px) {
-    width: 150px;
     font-size: 15px;
-  }
+    width: 40vw;
 `;
 
 export const Icon = styled.div`

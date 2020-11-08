@@ -25,7 +25,6 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     min-height: 100vh;
-    min-width: 100vw;
     font-family: 'Raleway', sans-serif;
   }
 `;

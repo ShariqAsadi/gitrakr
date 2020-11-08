@@ -31,12 +31,15 @@ export const Grid = styled.div`
 
 export const Items = styled.div`
   form {
-    display: flex;
-    flex-direction: column;
-    height: 120px;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    row-gap: 15px;
+    place-items: center;
+    width: 500px;
+    @media (max-width: 550px) {
+      width: 80vw;
+    }
   }
+  
 `;
 
 
