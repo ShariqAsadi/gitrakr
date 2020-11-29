@@ -19,9 +19,9 @@ const Container = styled.div`
 const StyledInput = styled.input`
   outline: none;
   border-radius: 0.25rem;
+  border: 1px solid var(--clr-text-blue);
   font-family: 'Inconsolata', monospace;
-  border: none;
-  background: var(--clr-bg-blue);
+  background: #34495e;
   color: var(--clr-text-blue);
   padding: 10px 20px 10px 50px;
   text-align: center;

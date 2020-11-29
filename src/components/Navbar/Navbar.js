@@ -36,7 +36,7 @@ const Navbar = () => {
           <Input value={query} onChange={onUserChange} placeholder='Search' />
         </Search>
       </form>
-      {remainingRequests && (
+      {remainingRequests > 0 && (
         <Tippy
           content={<span>{`You have ${remainingRequests} requests left.`}</span>}
           animation='scale-extreme'

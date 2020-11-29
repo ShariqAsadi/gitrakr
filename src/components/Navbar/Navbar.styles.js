@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   grid-template-columns: 1fr 5fr 1fr;
   column-gap: 1.5rem;
   font-size: 16px;
-  background-color: #000;
+  background-color: #2c3e50;
   color: var(--clr-white);
   padding: 10px 20px;
 

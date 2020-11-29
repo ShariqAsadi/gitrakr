@@ -59,12 +59,14 @@ export const ChartContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 9rem;
+  grid-auto-rows: 1fr;
+  padding-bottom: 1.5rem;
 `;
 
 export const Label = styled.label`
   margin: 10px 0px;
   display: inline-block;
-  font-size: 2.4rem;
+  font-size: 2.7rem;
   color: var(--clr-bg-blue);
   font-weight: 500;
   letter-spacing: 1.7px;
@@ -82,7 +84,7 @@ export const Loader = styled.div`
   justify-content: center;
   align-items: center;
   height: calc(100vh - 90px);
-`
+`;
 
 export const Grid = styled.div`
   display: grid;
