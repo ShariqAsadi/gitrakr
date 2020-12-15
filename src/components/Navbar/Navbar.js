@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
-import { Nav, Search, Icon } from './Navbar.styles';
+import { Nav, Search, Icon, Form, IconContainer } from './Navbar.styles';
 import Input from '../Input/Input';
 import { GithubUsersContext } from '../../context/GithubUsersContext/GithubUsersContext';
 import { FaInfoCircle } from 'react-icons/fa';
@@ -10,7 +10,7 @@ import 'tippy.js/animations/scale-extreme.css';
 
 const Navbar = () => {
   const { state, dispatch } = useContext(GithubUsersContext);
-  const { query, remainingRequests } = state;
+  const { query, remainingRequests, loading } = state;
   const history = useHistory();
   const variant =
     remainingRequests >= 40
@@ -29,25 +29,28 @@ const Navbar = () => {
   };
 
   return (
-    <Nav>
-      <Link to='/'>GiTrakr</Link>
-      <form onSubmit={onSearch}>
-        <Search>
-          <Input value={query} onChange={onUserChange} placeholder='Search' />
-        </Search>
-      </form>
-      {remainingRequests > 0 && (
-        <Tippy
-          content={<span>{`You have ${remainingRequests} requests left.`}</span>}
-          animation='scale-extreme'
-          placement='bottom-start'
-        >
-          <Icon variant={variant}>
-            <FaInfoCircle />
-          </Icon>
-        </Tippy>
+    <>
+      {!loading && (
+        <Nav>
+          <Form onSubmit={onSearch}>
+            <Search>
+              <Input value={query} onChange={onUserChange} placeholder='Search' profile />
+            </Search>
+            <IconContainer>
+              <Tippy
+                content={<span>{`You have ${remainingRequests} requests left.`}</span>}
+                animation='scale-extreme'
+                placement='bottom-start'
+              >
+                <Icon variant={variant}>
+                  <FaInfoCircle />
+                </Icon>
+              </Tippy>
+            </IconContainer>
+          </Form>
+        </Nav>
       )}
-    </Nav>
+    </>
   );
 };
 

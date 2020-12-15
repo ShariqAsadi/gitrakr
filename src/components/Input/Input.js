@@ -27,6 +27,8 @@ const StyledInput = styled.input`
   text-align: center;
   font-size: 3rem;
   width: 100%;
+  border-top-left-radius: ${props => props.profile && '25px'};
+  border-bottom-left-radius: ${props => props.profile && '25px'};
   &:focus {
     &::placeholder {
       color: transparent;

@@ -1,27 +1,34 @@
 import styled from 'styled-components/macro';
 
 export const Nav = styled.nav`
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr 5fr 1fr;
-  column-gap: 1.5rem;
-  font-size: 16px;
-  background-color: #2c3e50;
-  color: var(--clr-white);
-  padding: 10px 20px;
-
-  a {
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'Pacifico', cursive;
-    text-decoration: none;
-    color: var(--clr-white);
-  }
+  display: flex;
+  padding-top: 5px;
 `;
 
 export const Search = styled.div`
   font-size: 15px;
-  width: 40vw;
+  width: 100%;
+`;
+
+export const Form = styled.form`
+  width: 90vw;
+  display: flex;
+  min-width: 250px;
+  max-width: 1170px;
+  margin: 0 auto;
+`;
+
+export const IconContainer = styled.div`
+  background-color: #34495e;
+  border: 1px solid var(--clr-text-blue);
+  border-left: initial;
+  padding: 0 15px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 `;
 
 export const Icon = styled.div`
