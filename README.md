@@ -25,4 +25,3 @@ npm install
  npm start
 ```
 
-### Deployed at [GiTrakr](https://gitrakr.vercel.app/)
